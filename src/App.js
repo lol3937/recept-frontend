@@ -1,6 +1,6 @@
 import React from 'react';
 import {Login} from "./Login.js"
-import './App.css';
+import './Sass/App.scss';
 
 function App() {
   return (
@@ -14,6 +14,17 @@ function App() {
 
       <div className="kategorier">
       <a href="">Choklad</a>
+      </div>
+      <div className="Allarecept">
+        <figure className="Chokladmouse">
+          <img src="Chokladmouse.jpg"></img>
+        </figure>
+        <figure className="VitChoklad">
+          <img src="VitChoklad.jpg"></img>
+        </figure>
+        <figure className="MintChoklad">
+          <img src="MintChoklad.jpg"></img>
+        </figure>
       </div>
     </div>
     
