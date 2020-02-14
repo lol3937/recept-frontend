@@ -1,25 +1,23 @@
 import React from 'react';
-import logo from './logo.svg';
+import {Login} from "./Login.js"
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className>
+      <header>Efterätt<Login onLogin={""}/></header>
+
+
+      <p>Välkommen till denna sajt. Här kan du hitta olika recept på efterrätter.<br></br>Vill du lägga in, ta bort eller ändra ditt/dina recept så måste du logga in.<br></br>
+      klicka på knappen "logga in" uppe till höger för att logga in.<br></br>Vill du registrera dig klickar du där också, skriv in avn och lösen och klickar på"ny användare"</p>
+      <button>Lägg till recept</button><br></br>
+
+      <div className="kategorier">
+      <a href="">Choklad</a>
+      </div>
     </div>
+    
+    
   );
 }
 
