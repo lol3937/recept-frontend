@@ -1,5 +1,24 @@
-$primary-color: grey;
+@import "~bulma";
+
+$primary-color: rgb(253, 181, 181);
 
 body{
     background-color: $primary-color;
+    text-align: center;
 }
+header{
+    text-align: center;
+    font-size: 2em;
+    background-color: aqua;
+    margin-bottom: 2em;
+  }
+  
+  .kategorier{
+    margin-top: 2em;
+  }
+
+  img{
+      border-radius: 18px;
+      width: 22em;
+  }
+  
