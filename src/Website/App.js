@@ -1,69 +1,40 @@
 import React from 'react';
-import {Login} from "../Login/Login.js";
+
+import {Start} from "./Start";
 import '../Sass/App.scss';
+import { Chokladmouse } from '../Recepts/ChokladMouse';
+import { VitChoklad } from '../Recepts/VitChoklad';
+import { MintChoklad } from '../Recepts/MintChoklad';
 
 
-function App() {
-
-  const [ShowModal, setShowModal] = React.useState(false);
-    let modal = "modal";
-    if (ShowModal === true) {
-        modal = "modal is-active";
-    }
-
-    function AddRecept(){
-      if(""){
-        closeModal();
-      }
-    }
+/**
+ * @param {object} props
+ * @param {function} ontransitionstart.onNavigate
+ */
 
 
-    function openModal() {
-        setShowModal(true);
-    }
+function App(props) {
 
-    function closeModal() {
-        setShowModal(false);
-    }
+  const [page, setPage] = React.useState(0);
 
+  function navigate(id){
+    console.log(`Navigate: ${id}`)
+    setPage(id);
+  }
 
-  return (
-    <div className>
-      <header>Efterätt<Login onLogin={""}/></header>
+  let Startpage = null;
+  if(page === 0)
+  Startpage = <Start navigate={navigate}/>
+  else if(page === 1)
+  Startpage = <Chokladmouse navigate={navigate}/>;
+  else if(page === 2)
+  Startpage = <VitChoklad navigate={navigate}/>;
+  else if(page === 3)
+  Startpage = <MintChoklad navigate={navigate}/>;
 
-      <p>Välkommen till denna sajt. Här kan du hitta olika recept på efterrätter.<br></br>Vill du lägga in, ta bort eller ändra ditt/dina recept så måste du logga in.<br></br>
-      klicka på knappen "logga in" uppe till höger för att logga in.<br></br>Vill du registrera dig klickar du där också, skriv in avn och lösen och klickar på"ny användare"</p>
-      
-      <button onClick={openModal}>Lägg till recept</button><br></br>
-      <div className={modal}>
-      <div className="modal-background" />
-      <div className="modal-content">
-      <input className="input" id="steg" type="text" placeholder="Steg för steg"/>
-      <input className="input" id="ingredienser" type="text" placeholder="Ingredienser"/>
-      <button type="button" className="ClickAdd" onClick={AddRecept}>Lägg till</button>
-      <button type="button" className="AddImg" onClick={""}>Infogra bild</button>
-      </div>
-      <button className="modal-close is-large" onClick={closeModal} aria-label="close">modal</button>
-      </div>
-
-      <div className="kategorier">
-      <a href="">Choklad</a>
-      </div>
-      <div className="Allarecept">
-        <figure className="Chokladmouse">
-          <img src="Chokladmouse.jpg"></img>
-        </figure>
-        <figure className="VitChoklad">
-          <img src="VitChoklad.jpg"></img>
-        </figure>
-        <figure className="MintChoklad">
-          <img src="MintChoklad.jpg"></img>
-        </figure>
-      </div>
-    </div>
-    
-    
-  );
+  return <div>
+    {Startpage}
+  </div>
 }
 
 export default App;
