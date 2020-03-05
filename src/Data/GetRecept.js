@@ -1,15 +1,18 @@
 /**
  * Data från backend
  */
-export async function HämtaData(){
-    let result = await fetch("/Receptslutproj/resources/recepts/")
+let URL = "http://localhost:8080/Receptslutproj/resources/";
 
-    if(result.ok)
-    {
-        const data = await result.json();
+export async function getReceptData(){
 
-        return data;
-    }
+    const result = await fetch(URL+"recept?id=1",{
+        method: "GET",
+        headers:{
+          //  'Authorization': "Basic "
+        }
+    });
+
+    return result.status === 200;
 }
 
 
@@ -17,7 +20,7 @@ export async function postReceptData(data){
     fetch("/Receptslutproj/resources/recept",{
         method: "POST",
         headers:{
-            'Authorization': basicAuth,
+            'Authorization': "basic",
         "Content-Type" : "application/json"
     },
     body: JSON.stringify(data)
@@ -30,7 +33,7 @@ export async function deleteReceptData(id){
     fetch("/Receptslutproj/resources/recept?id="+id,{
         method: "DELETE",
         headers:{
-            'Authorization': basicAuth,
+            'Authorization': "Basic",
         "Content-Type" : "application/json"
     }
     })

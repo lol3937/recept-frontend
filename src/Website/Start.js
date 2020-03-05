@@ -1,7 +1,10 @@
 import React from "react";
 import {Login} from "../Login/Login.js";
+import {getReceptData} from "../Data/GetRecept";
 
 export function Start(props){
+
+    const[currentData, settCurrentData] = React.useState(undefined);
 
     const [ShowModal, setShowModal] = React.useState(false);
     let modal = "modal";
@@ -10,20 +13,26 @@ export function Start(props){
     }
 
     //Navigerar till receptet när man klickar på bilden
-    function GotoChokladmouse(){
+    async function GotoChokladmouse(){
+      const rData = await getReceptData();
+      settCurrentData(rData);
       props.navigate(1)
     }
 
-    function GotoVitChoklad(){
+    async function GotoVitChoklad(){
+      const rData = await getReceptData();
+      settCurrentData(rData);
       props.navigate(2)
     }
 
-    function GotoMintChoklad(){
+    async function GotoMintChoklad(){
+      const rData = await getReceptData();
+      settCurrentData(rData);
       props.navigate(3)
     }
 
     //Om man lägger till ett recept, modal stängs och recept läggs till
-    function AddRecept(){
+    async function AddRecept(){
       if(""){
         closeModal();
       }
@@ -41,9 +50,8 @@ export function Start(props){
     return(<div className>
           <header><h1>Efterätt</h1><Login/></header>
     
-          <p>Välkommen till denna sajt. Här kan du hitta olika recept på efterrätter.<br></br>Vill du lägga in, ta bort eller ändra ditt/dina recept så måste du logga in.<br></br>
+          <p>Välkommen till denna sajt. Här kan du hitta olika recept på efterrätter.<br/>Vill du lägga in, ta bort eller ändra ditt/dina recept så måste du logga in.<br></br>
           klicka på knappen "logga in" uppe till höger för att logga in.<br></br>Vill du registrera dig klickar du där också, skriv in avn och lösen och klickar på"ny användare"</p>
-          
           <button onClick={openModal}>Lägg till recept</button><br></br>
           <div className={modal}>
           <div className="modal-background" />

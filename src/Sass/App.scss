@@ -1,6 +1,6 @@
 @import "~bulma";
 
-$primary-color: rgb(253, 181, 181);
+$primary-color: rgb(255, 149, 149);
 
 body{
     background-color: $primary-color;
@@ -8,12 +8,17 @@ body{
 }
 header{
     font-size: 2em;
-    background-color: aqua;
+    background-color: rgb(0, 0, 0);
     margin-bottom: 2em;
   }
   
   .kategorier{
     margin-top: 2em;
+  }
+
+  h1{
+    color: white;
+    
   }
 
   img{
@@ -22,4 +27,7 @@ header{
       margin-right: 90em;
       border-style: solid;
   }
-  
+
+ .field{
+   width: 20em;
+ }

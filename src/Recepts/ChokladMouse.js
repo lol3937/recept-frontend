@@ -3,32 +3,33 @@ import {Login} from "../Login/Login.js";
 
 
 export function Chokladmouse(props){
-
     function Back(){
         props.navigate(0)
     }
 
     return <div className="HeaderChoklad">
-        <header>Chokladmouse<Login/><button onClick={Back}>Tillbaka</button></header>
-        <h1>INGREDIENSER</h1>
-        <h2>4 port</h2>
-        <li>50g Mörk CHoklad</li>
-        <li>1 1/4 dl Vispgrädde</li>
-        <li> 1 Äggula</li>
-        <li>1 msk Strösocker</li>
-        <li>1msk Vatten</li>
-
-        <br></br>
-
-        <h1>GÖR SÅHÄR</h1>
-        <p> Hacka chokladen i mindre bitar och lägg i en bunke. <br></br> Vispa 1.5 dl av grädden löst och ställ kallt. <br></br>
-        Koka upp resten av grädden och slå över den hackade chokladen, rör till en jämn smet. <br></br>
-        Koka upp socker och vatten och häll i en jämn stråle över äggulorna under kraftig vispning till ett fint skum. <br></br>
-        Blanda i chokladsmeten i äggskummet och vänd sedan i den vispade grädden. Fördela moussen i glas. Låt moussen stelna i kyl minst en tim. <br></br>
-        
-        Brända mandlar:
-        Skala en tunn bit apelsinskal med potatisskalare. Finstrimla skalet. Smörj en bit bakplåtspapper med olja. <br></br> 
-        Smält sockret i en liten kastrull. Rör ner apelsinskal och mandel med en träsked. Häll upp blandningen på papperet. <br></br>
-        Låt det stelna cirka 30 minuter. Hacka det med en stor vass kniv. Strö den hackade mandeln över moussen.</p>  
+        <header><h1>Chokladmouse<button className="Back" onClick={Back}>Tillbaka</button></h1><Login/></header>
+        <article className="media">
+  <figure className="media-left">
+    <p className="image is-64x64"/>
+  </figure>
+  <div className="media-content">
+    <div className="field">
+      <p className="control"><textarea className="textarea" placeholder="Add a comment..."></textarea></p>
     </div>
+    <nav className="level">
+      <div className="level-left">
+        <div className="level-item">
+          <a className="button is-info">Submit</a>
+        </div>
+      </div>
+      <div className="level-right">
+        <div className="level-item">
+          <label className="checkbox"input type="checkbox"> Press enter to submit</label>
+        </div>
+      </div>
+    </nav>
+  </div>
+  </article>
+  </div>
 }
