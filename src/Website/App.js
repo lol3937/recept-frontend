@@ -6,7 +6,6 @@ import { Chokladmouse } from '../Recepts/ChokladMouse';
 import { VitChoklad } from '../Recepts/VitChoklad';
 import { MintChoklad } from '../Recepts/MintChoklad';
 
-
 /**
  * @param {object} props
  * @param {function} ontransitionstart.onNavigate
@@ -16,21 +15,20 @@ import { MintChoklad } from '../Recepts/MintChoklad';
 function App(props) {
 
   const [page, setPage] = React.useState(0);
-
+  const[currentData, settCurrentData] = React.useState(undefined);
   function navigate(id){
-    console.log(`Navigate: ${id}`)
     setPage(id);
   }
 
   let Startpage = null;
   if(page === 0)
-  Startpage = <Start navigate={navigate}/>
+  Startpage = <Start navigate={navigate} setData ={settCurrentData}/>
   else if(page === 1)
-  Startpage = <Chokladmouse navigate={navigate}/>;
+  Startpage = <Chokladmouse navigate={navigate} data = {currentData}/>;
   else if(page === 2)
-  Startpage = <VitChoklad navigate={navigate}/>;
+  Startpage = <VitChoklad navigate={navigate} data = {currentData}/>;
   else if(page === 3)
-  Startpage = <MintChoklad navigate={navigate}/>;
+  Startpage = <MintChoklad navigate={navigate} data = {currentData}/>;
 
   return <div>
     {Startpage}

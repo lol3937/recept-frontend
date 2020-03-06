@@ -1,11 +1,11 @@
 import React from "react";
 import {Login} from "../Login/Login.js";
-import {getReceptData} from "../Data/GetRecept";
+import {getReceptData, postReceptData} from "../Data/GetRecept";
+import Chokladmouse from "../Recepts/ChokladMouse.js";
 
 export function Start(props){
 
-    const[currentData, settCurrentData] = React.useState(undefined);
-
+   
     const [ShowModal, setShowModal] = React.useState(false);
     let modal = "modal";
     if (ShowModal === true) {
@@ -15,27 +15,33 @@ export function Start(props){
     //Navigerar till receptet när man klickar på bilden
     async function GotoChokladmouse(){
       const rData = await getReceptData();
-      settCurrentData(rData);
+      props.setData(rData);
       props.navigate(1)
     }
 
     async function GotoVitChoklad(){
       const rData = await getReceptData();
-      settCurrentData(rData);
+      props.setData(rData);
       props.navigate(2)
     }
 
     async function GotoMintChoklad(){
       const rData = await getReceptData();
-      settCurrentData(rData);
+      props.setData(rData);
       props.navigate(3)
     }
 
     //Om man lägger till ett recept, modal stängs och recept läggs till
     async function AddRecept(){
-      if(""){
-        closeModal();
+      const instruction = document.getElementById("Instruktion").value;
+      const ingredienser = document.getElementById("ingredienser").value;
+      const addData = {
+        id:0,
+        instruction,
+        ingredienser
       }
+      postReceptData(addData);
+        closeModal();
     }
 
 
@@ -84,3 +90,5 @@ export function Start(props){
         </div>  
       );
 }
+
+export default Start;

@@ -2,32 +2,47 @@
 
 $primary-color: rgb(255, 149, 149);
 
-body{
-    background-color: $primary-color;
-    text-align: center;
-}
-header{
-    font-size: 2em;
-    background-color: rgb(0, 0, 0);
-    margin-bottom: 2em;
-  }
+@media screen and(max-width: 600px){
   
-  .kategorier{
-    margin-top: 2em;
-  }
 
-  h1{
-    color: white;
+  body{
+      background-color: $primary-color;
+      text-align: center;
+  }
+  header{
+      font-size: 2em;
+      background-color: rgb(0, 0, 0);
+      margin-bottom: 2em;
+    }
     
-  }
+    .kategorier{
+      margin-top: 2em;
+    }
+  
+    h1{
+      color: white;
+      
+    }
 
-  img{
-      border-radius: 18px;
-      width: 22em;
-      margin-right: 90em;
-      border-style: solid;
-  }
+    h2{
+      font-family:'Arial Narrow Bold';
+      font-weight: bold;
+      color: black;
+    }
+  
+    img{
+        border-radius: 18px;
+        width: 22em;
+        margin-left: 0.2em;
+        border-style: solid;
+    }
+  
+   .field{
+     width: 20em;
+   }
+  
+   .checkbox{
+     margin-right: 20em;
+   }
+}
 
- .field{
-   width: 20em;
- }

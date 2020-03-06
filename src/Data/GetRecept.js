@@ -11,8 +11,8 @@ export async function getReceptData(){
           //  'Authorization': "Basic "
         }
     });
-
-    return result.status === 200;
+    
+    return await result.json();
 }
 
 
