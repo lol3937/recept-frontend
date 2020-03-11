@@ -13,7 +13,7 @@ export function VitChoklad(props){
         <div>
           {props.data.instruction}
         </div>
-        <h1>INGREDIENSER</h1>
+        <h2>INGREDIENSER</h2>
         <article className="media">
           <div className="media-content">
             <div className="field">

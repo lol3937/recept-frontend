@@ -1,7 +1,6 @@
 import React from "react";
 import {Login} from "../Login/Login.js";
 import {getReceptData, postReceptData} from "../Data/GetRecept";
-import Chokladmouse from "../Recepts/ChokladMouse.js";
 
 export function Start(props){
 
@@ -76,7 +75,7 @@ export function Start(props){
           <div className="Allarecept">
             <figure className="Chokladmouse">
             <p>Chokladmouse</p>
-              <img src="Chokladmouse.jpg" onClick={GotoChokladmouse}></img>
+              <img src="Mouse.jpg" onClick={GotoChokladmouse}></img>
             </figure>
             <figure className="VitChoklad">
             <p>VitChoklad</p>

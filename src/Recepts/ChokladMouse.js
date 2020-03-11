@@ -1,6 +1,5 @@
 import React from "react";
 import {Login} from "../Login/Login.js";
-import settCurrentData from "../Website/Start.js";
 
 
 export function Chokladmouse(props){
@@ -14,6 +13,10 @@ export function Chokladmouse(props){
         <h2>GÖR SÅHÄR</h2>
         <div> 
           {props.data.instruction}
+        </div>
+        <h2>INGREDIENSER</h2>
+        <div>
+          {props.data.id}
         </div>
         
         <article className="media">
