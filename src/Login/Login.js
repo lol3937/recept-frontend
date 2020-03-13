@@ -1,7 +1,10 @@
 import React from "react";
 
-export function Login(props){
-    return <div className="dropdown">
+export function Login(props) {
+  function Back() {
+    props.navigate(0);
+  }
+  return <div className="dropdown">
     <div className="dropdown-trigger">
       <button className="button" aria-haspopup="true" aria-controls="dropdown-menu3">
         <span>Log in</span>
@@ -12,11 +15,13 @@ export function Login(props){
     </div>
     <div className="dropdown-menu" id="dropdown-menu3" role="menu">
       <div className="dropdown-content">
-      <a href="#" className="dropdown-item">
-        Overview
-      </a>
-      <a href="#" className="dropdown-item">Modifiers</a>
-          </div>
-          </div>
-          </div>
+        <p><label className="uname" htmlFor="uname"><b>Username: </b> </label>
+          <input type="text" id="rusername"></input></p>
+
+        <p><label className="psw" htmlFor="psw"><b>Password: </b></label>
+          <input type="password" id="rpassword"></input></p>
+        <button type="submit" onClick={Back}>Logga in</button>
+      </div>
+    </div>
+  </div>
 }
