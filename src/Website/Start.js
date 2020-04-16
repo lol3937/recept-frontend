@@ -73,6 +73,10 @@ export function Start(props) {
       <a href="">Choklad</a>
     </div>
     <div className="Allarecept">
+      {/** dessa tre element är nästa identiska. Perfekt att göra en komponent istället för att upprepa.
+       * Då blir det dessutom mycket enklare när du hämtar listan med recepten från databasen och inte vet
+       * hur många det är.
+       */}
       <figure className="Chokladmouse">
         <p>Chokladmouse</p>
         <img src="Mouse.jpg" onClick={GotoChokladmouse}></img>
