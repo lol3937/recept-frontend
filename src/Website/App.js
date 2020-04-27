@@ -8,7 +8,7 @@ import { MintChoklad } from '../Recepts/MintChoklad';
 
 /**
  * @param {object} props
- * @param {function} ontransitionstart.onNavigate
+ * @param {function} ontransitionstart.onNavigate //ursäkta vaddå? :)
  */
 
 

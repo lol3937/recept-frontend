@@ -3,6 +3,9 @@
  */
 let URL = "http://localhost:8080/Receptslutproj/resources/";
 
+//dessa tre funktioner gör nästa exakt samma sak
+//om man kan ta emot id som argument kan du ersätta dessa
+//med EN funktion
 export async function getReceptData() {
 
   const result = await fetch(URL + "recept?id=1", {
